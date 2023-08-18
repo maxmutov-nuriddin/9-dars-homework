@@ -1,10 +1,8 @@
 const photosInner = document.querySelector(".photos__inner")
-const loader = document.querySelector('.wyre-cards')
 
 
 const photo = new URLSearchParams(location.search).get("photo");
 
-loader.style = `display:block`
 
 function getData(url, callback) {
   let xhr = new XMLHttpRequest();
@@ -27,7 +25,6 @@ function getData(url, callback) {
 
 
 getData(`https://jsonplaceholder.typicode.com/photos?albumId=${photo}`, (photos) => {
-  loader.style = `display:none`
   photos.map((photo) => {
     photosInner.innerHTML += getUserRow(photo);
   });
