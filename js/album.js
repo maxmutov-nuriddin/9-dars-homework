@@ -1,10 +1,8 @@
 const albumInner = document.querySelector(".album__inner")
-const loader = document.querySelector('.wyre-cards')
 
 
 const album = new URLSearchParams(location.search).get("album");
 
-loader.style = `display:block`
 
 function getData(url, callback) {
   let xhr = new XMLHttpRequest();
@@ -27,7 +25,6 @@ function getData(url, callback) {
 
 
 getData(`https://jsonplaceholder.typicode.com/albums?userId=${album}`, (album) => {
-  loader.style = `display:none`
   album.map((albums) => {
     albumInner.innerHTML += getUserRow(albums);
   });

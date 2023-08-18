@@ -1,10 +1,8 @@
 const commentsInner = document.querySelector(".comments__inner")
-const loader = document.querySelector('.wyre-cards')
 
 
 const comments = new URLSearchParams(location.search).get("comments");
 
-loader.style = `display:block`
 
 function getData(url, callback) {
   let xhr = new XMLHttpRequest();
@@ -27,7 +25,6 @@ function getData(url, callback) {
 
 
 getData(`https://jsonplaceholder.typicode.com/comments?userId=${comments}`, (commemt) => {
-  loader.style = `display:none`
   commemt.map((commemts) => {
     commentsInner.innerHTML += getUserRow(commemts);
   });

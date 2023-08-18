@@ -1,10 +1,8 @@
 const postsInner = document.querySelector(".post__inner")
-const loader = document.querySelector('.wyre-cards')
 
 
 const posts = new URLSearchParams(location.search).get("posts");
 
-loader.style = `display:block`
 
 function getData(url, callback) {
   let xhr = new XMLHttpRequest();
@@ -27,7 +25,6 @@ function getData(url, callback) {
 
 
 getData(`https://jsonplaceholder.typicode.com/posts?userId=${posts}`, (post) => {
-  loader.style = `display:none`
   post.map((posts) => {
     postsInner.innerHTML += getUserRow(posts);
   });

@@ -130,9 +130,7 @@ body {
   transition: 0.5s;
 }
 
-.on__off {
-  z-index: -1 !important;
-}
+
 
 .center:hover {
   transform: prespective(1000px) translate(-50%, -50%);

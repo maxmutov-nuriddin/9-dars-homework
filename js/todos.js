@@ -1,10 +1,9 @@
 const todoInner = document.querySelector(".todo__inner")
-const loader = document.querySelector('.wyre-cards')
 
 
 const todos = new URLSearchParams(location.search).get("todos");
 
-loader.style = `display:block`
+
 
 function getData(url, callback) {
   let xhr = new XMLHttpRequest();
@@ -27,7 +26,7 @@ function getData(url, callback) {
 
 
 getData(`https://jsonplaceholder.typicode.com/todos?userId=${todos}`, (todo) => {
-  loader.style = `display:none`
+
   todo.map((todos) => {
     todoInner.innerHTML += getUserRow(todos);
   });

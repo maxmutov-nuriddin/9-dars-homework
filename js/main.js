@@ -1,13 +1,9 @@
 const userInner = document.querySelector('.user__inner')
 const on = document.querySelector('.on')
 const center = document.querySelector('.center')
-const loader = document.querySelector('.wyre-cards')
 
-on.addEventListener('click', () => {
-  center.classList.toggle('on__off')
-})
 
-loader.style = `display:block`
+
 
 function getData(url, callback) {
   let xhr = new XMLHttpRequest();
@@ -29,7 +25,6 @@ function getData(url, callback) {
 
 
 getData("https://jsonplaceholder.typicode.com/users", (users) => {
-  loader.style = `display:none`
   users.map((user) => {
     userInner.innerHTML += getUserRow(user);
   });
