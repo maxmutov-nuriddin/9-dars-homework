@@ -1,7 +1,8 @@
 const commentsInner = document.querySelector(".comments__inner")
 
 
-const comments = new URLSearchParams(location.search).get("comments");
+const comments = new URLSearchParams(location.search).get("comment");
+console.log(comments);
 
 
 function getData(url, callback) {
@@ -24,7 +25,7 @@ function getData(url, callback) {
 }
 
 
-getData(`https://jsonplaceholder.typicode.com/comments?userId=${comments}`, (commemt) => {
+getData(`https://jsonplaceholder.typicode.com/comments?postId=${comments}`, (commemt) => {
   commemt.map((commemts) => {
     commentsInner.innerHTML += getUserRow(commemts);
   });

@@ -3,8 +3,6 @@ const todoInner = document.querySelector(".todo__inner")
 
 const todos = new URLSearchParams(location.search).get("todos");
 
-
-
 function getData(url, callback) {
   let xhr = new XMLHttpRequest();
 

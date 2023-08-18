@@ -26,7 +26,7 @@ function getData(url, callback) {
 }
 
 
-getData(`https://jsonplaceholder.typicode.com/photos?userId=${photo}`, (photos) => {
+getData(`https://jsonplaceholder.typicode.com/photos?albumId=${photo}`, (photos) => {
   loader.style = `display:none`
   photos.map((photo) => {
     photosInner.innerHTML += getUserRow(photo);
@@ -40,7 +40,7 @@ function getUserRow(photo) {
   <div class="user__box">
     <p>Id: ${photo.id}</p>
     <h3 class="user__name" style="margin-top:10px;">Title: ${photo.title}</h3>
-    <img src="${photo.url}" width="20" height="20" style="margin-top:10px;">
+    <img src="${photo.url}" width="250" height="100" style="margin-top:10px;">
   </div>
   <span class="top"></span>
   <span class="right"></span>
